@@ -1,0 +1,20 @@
+{
+  "Respond below": {
+    "scope": "scss",
+    "prefix": "respond-below",
+    "body": ["@include respond-below($1) {", "$2", "}"],
+    "description": "Create a max-width mediaquery"
+  },
+  "Respond above": {
+    "scope": "scss",
+    "prefix": "respond-above",
+    "body": ["@include respond-above($1) {", "$2", "}"],
+    "description": "Create a min-width mediaquery"
+  },
+  "Respond between": {
+    "scope": "scss",
+    "prefix": "respond-between",
+    "body": ["@include respond-between($1, $2) {", "$2", "}"],
+    "description": "Create a mediaquery between"
+  }
+}

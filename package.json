@@ -3,18 +3,49 @@
   "version": "1.0.0",
   "description": "Technical test for React frontend developer position at Karvi.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.20.3",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "stylelint": "^13.6.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint-webpack-plugin": "^2.1.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "format": "./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "lint:css": "stylelint src/**/*.css --fix",
+    "lint:js": "eslint --fix --ext .js,.jsx .",
+    "lint": "npm run lint:css && npm run lint:css"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
