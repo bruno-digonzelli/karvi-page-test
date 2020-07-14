@@ -2,7 +2,7 @@ const {merge} = require('webpack-merge');
 const common = require('./webpack.common');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -10,7 +10,7 @@ module.exports = merge(common, {
     new StyleLintPlugin({
       configFile: '.stylelintrc',
       context: 'src',
-      files: '**/*.css',
+      files: '**/*.scss',
       fix: true,
       failOnError: false,
       quiet: false,
@@ -18,11 +18,6 @@ module.exports = merge(common, {
     }),
     new Dotenv({
       path: './.env.production',
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {from: 'public'},
-      ],
     }),
   ],
 });
