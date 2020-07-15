@@ -1,7 +1,7 @@
-import React from "react"
-import Header from "./components/Header"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import UsedCars from "./pages/UsedCars"
+import React from 'react';
+import Header from './components/Header';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import UsedCars from './pages/UsedCars';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

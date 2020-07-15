@@ -150,12 +150,12 @@ hr {
 .container {
   max-width: initial;
 
+  padding-left: 43px;
+  padding-right: 43px;
+
   // Desktop
   @include respond-above(xl) {
     max-width: 1279px;
   }
-
-  padding-left: 43px;
-  padding-right: 43px;
 }
 /* --------- CUSTOM MODIFICATIONS ---------- */

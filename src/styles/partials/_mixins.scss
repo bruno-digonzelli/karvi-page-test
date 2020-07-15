@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 /* ----------- Breakpoints ------------- */
 $breakpoints: (
@@ -61,5 +61,5 @@ $colors: (
   }
 }
 
-@include gen-props("text", "color");
-@include gen-props("bg", "background");
+@include gen-props('text', 'color');
+@include gen-props('bg', 'background');

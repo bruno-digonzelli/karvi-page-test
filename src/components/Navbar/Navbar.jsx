@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
-import Logo from "../../../public/images/logo.svg"
-import "./_navbar.scss"
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import Logo from '../../../public/images/logo.svg';
+import './_navbar.scss';
 
-const Navbar = ({ items, userSpecs }) => {
+const Navbar = ({items, userSpecs}) => {
   return (
     <nav className="navbar">
       <div className="container">
@@ -35,8 +35,8 @@ const Navbar = ({ items, userSpecs }) => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 Navbar.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
@@ -44,8 +44,8 @@ Navbar.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       icon: PropTypes.string,
-    })
+    }),
   ),
-}
+};
 
-export default Navbar
+export default Navbar;
