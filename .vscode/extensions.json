@@ -4,6 +4,7 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
-    "ritwickdey.liveserver"
+    "dsznajder.es7-react-js-snippets",
+    "burkeholland.simple-react-snippets"
   ]
 }
