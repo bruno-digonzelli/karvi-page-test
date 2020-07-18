@@ -1,0 +1,31 @@
+.filter {
+  margin-right: 43px;
+  width: 283px;
+
+  // Total
+  .filter__results-total-container {
+    border-bottom: 1px solid rgba($black, 0.11);
+    margin-bottom: 10px;
+
+    .filter__results-total {
+      color: $dark-grey;
+      padding-bottom: 5px;
+    }
+  }
+
+  // Results
+  .filter__results-container {
+    .filter__results-item {
+      margin-bottom: 10px;
+
+      .filter__results-geo-container {
+        .filter__results-geo {
+          .filter__results-geo-text {
+            line-height: 1;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}

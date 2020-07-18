@@ -123,7 +123,7 @@ main {
   background-color: $grey;
   height: 100%;
   margin: 0 auto;
-  padding: 211px 0;
+  padding: 221px 0;
 }
 
 section {
@@ -218,6 +218,22 @@ a {
     color: inherit;
     text-decoration: none;
   }
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+
+	// Hover
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+		-moz-outline-style: none;
+	}
 }
 
 span {
