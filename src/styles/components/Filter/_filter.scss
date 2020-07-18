@@ -43,10 +43,20 @@
     .filter__top-ipad-fixed {
       display: none;
       padding: 11px 22px 0;
+      width: 100%;
 
       // Ipad
       @include respond-below(sm) {
         display: flex;
+        margin-bottom: 9px;
+      }
+
+      // Mobile
+      @include respond-below(xs) {
+        margin: 0 auto 9px;
+        padding: initial;
+        padding-top: 11px;
+        width: 282px;
       }
 
       .filter__top-cross-container {

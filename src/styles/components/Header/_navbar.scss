@@ -1,8 +1,8 @@
 .navbar {
   padding: 18px 0 26px;
 
-  // Mobile
-  @include respond-below(sm) {
+  // Special mediaquery
+  @include respond-below(special) {
     padding: 12px 0;
   }
 
@@ -10,8 +10,8 @@
   .navbar__mobile {
     display: none;
 
-    // Ipad
-    @include respond-below(sm) {
+    // Special mediaquery
+    @include respond-below(special) {
       display: block;
     }
 
@@ -22,8 +22,8 @@
       top: 0;
       width: 18px;
 
-      // Mobile
-      @include respond-below(sm) {
+      // Special mediaquery
+      @include respond-below(special) {
         top: 50%;
         transform: translateY(-50%);
       }
@@ -54,8 +54,8 @@
   .navbar__desktop {
     display: flex;
 
-    // Ipad
-    @include respond-below(sm) {
+    // Special mediaquery
+    @include respond-below(special) {
       display: none;
     }
 

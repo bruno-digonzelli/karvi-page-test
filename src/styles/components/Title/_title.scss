@@ -9,15 +9,26 @@
   z-index: 2;
 
   // Ipad
-  @include respond-below(sm) {
+  @include respond-below(special) {
     padding-bottom: 18px;
     padding-top: 9px;
     top: 52.3px;
   }
 
+  // Mobile
+  @include respond-below(xs) {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
   .breadcrumbs {
     margin-bottom: 22px;
     padding-left: initial;
+
+    // Mobile
+    @include respond-below(xs) {
+      margin-bottom: 16px;
+    }
 
     .breadcrumbs__item {
       font-size: 14px;

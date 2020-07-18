@@ -3,7 +3,7 @@ import ItemSingle from './ItemSingle';
 
 const Items = () => {
   return (
-    <section className="items d-flex flex-wrap justify-content-between">
+    <section className="items d-flex flex-wrap justify-content-md-between">
       <ItemSingle />
       <ItemSingle />
       <ItemSingle />

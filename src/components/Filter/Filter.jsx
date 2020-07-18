@@ -7,7 +7,7 @@ const Filter = () => {
     <section className="filter">
 
       {/* Ipad - General */}
-      <div className="filter__results-ipad-general justify-content-between">
+      <div className="filter__results-ipad-general justify-content-between align-items-center">
 
         <h6 className="filter__results-ipad-general-results">4.324 resultados</h6>
 
@@ -21,7 +21,7 @@ const Filter = () => {
       <div className="filter__container">
 
         {/* Top - Ipad */}
-        <div className="filter__top-ipad-fixed w-100 align-items-center justify-content-between">
+        <div className="filter__top-ipad-fixed align-items-center justify-content-between">
           <button className="h6 link">Limpiar filtros</button>
 
           <div className="filter__top-cross-container">

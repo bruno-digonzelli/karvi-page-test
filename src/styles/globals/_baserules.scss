@@ -138,11 +138,17 @@ strong {
 
 /* --------- END TYPOGRAPHY ---------- */
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
+.h5,
 h6,
+.h6,
 a,
 li,
 label,
@@ -153,6 +159,7 @@ button,
 select {
   color: $black;
   font-family: $primary-font;
+  margin-bottom: initial;
 }
 
 h1,
@@ -174,6 +181,11 @@ h1,
   // Ipad
   @include respond-below(sm) {
     font-size: 22px;
+  }
+
+  // Mobile
+  @include respond-below(xs) {
+    font-size: 16px;
   }
 }
 
