@@ -1,10 +1,8 @@
 .items__item {
-  background-color: $white;
-  border: 1px $secondary-grey;
-  border-radius: 3px;
-  box-shadow: 0 3px 6px rgba($black, 0.04);
+  height: 323px;
   margin-bottom: 13px;
   margin-right: $item-separation;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
   position: relative;
   width: 32.4%;
 
@@ -43,50 +41,121 @@
     }
   }
 
-  // Heart
-  .items__item-heart-container {
-    background-color: $white;
-    border-radius: 100%;
-    box-shadow: 0 3px 6px rgba($black, 0.16);
-    height: 30px;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    width: 30px;
+  .items__item-inner {
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s;
+    width: 100%;
 
-    .items__item-heart {
-      width: 16.19px;
-    }
-  }
-
-  // Image
-  .items__item-img {
-    background-position: center center;
-    background-size: cover;
-    height: 182px;
-  }
-
-  // Content
-  .items__item-content {
-    padding: 14px 11px 9px;
-
-    .items__item-title {
-      margin-bottom: 2px;
+    /* General styles for front and back */
+    .items__item-front,
+ .items__item-back {
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      background-color: $white;
+      border: 1px $secondary-grey;
+      border-radius: 3px;
+      box-shadow: 0 3px 6px rgba($black, 0.04);
+      height: 100%;
+      position: absolute;
+      width: 100%;
     }
 
-    .items__item-copy {
-      margin-bottom: 2px;
-    }
+    // Front
+    .items__item-front {
+      // Heart
+      .items__item-heart-container {
+        background-color: $white;
+        border-radius: 100%;
+        box-shadow: 0 3px 6px rgba($black, 0.16);
+        height: 30px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 30px;
 
-    .items__item-price-container {
-      border-top: 1px solid $secondary-grey;
-      margin-top: 2.5px;
-      padding-top: 6.5px;
-
-      .items__item-price-status {
-        padding-left: 2px;
-        padding-right: 4px;
+        .items__item-heart {
+          width: 16.19px;
+        }
       }
+
+      // Image
+      .items__item-img {
+        background-position: center center;
+        background-size: cover;
+        height: 182px;
+      }
+
+      // Content
+      .items__item-content {
+        padding: 14px 11px 9px;
+
+        .items__item-title {
+          margin-bottom: 2px;
+        }
+
+        .items__item-copy {
+          margin-bottom: 2px;
+        }
+
+        .items__item-price-container {
+          border-top: 1px solid $secondary-grey;
+          margin-top: 2.5px;
+          padding-top: 6.5px;
+
+          .items__item-price-status {
+            padding-left: 2px;
+            padding-right: 4px;
+          }
+        }
+      }
+    }
+
+    .items__item-back {
+      transform: rotateY(180deg);
+
+      .items__item-back-container {
+        margin: 0 auto;
+        max-width: 270px;
+        padding: 52px 5px 27px;
+
+        .items__item-back-main-img-container {
+          margin-bottom: 30px;
+        }
+
+
+        .items__item-back-content {
+          .items__item-back-item {
+            margin-bottom: 16px;
+
+            // Last child
+            &:last-child {
+              margin-bottom: initial;
+            }
+
+            .items__item-back-item-img {
+              margin-right: 19px;
+              width: 33px;
+            }
+
+            .items__item-back-item-copy {
+              border-bottom: 1px solid $secondary-grey;
+              font-size: 14px;
+              font-weight: $bold;
+              line-height: 18px;
+              padding-bottom: 5.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Hover
+  &:hover {
+    .items__item-inner {
+      transform: rotateY(180deg);
     }
   }
 }
