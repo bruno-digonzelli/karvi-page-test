@@ -10,7 +10,7 @@ const UsedCars = () => {
         city="Sao Paulo"
       />
 
-      <div className="used-cars__content container d-flex">
+      <div className="used-cars__content container">
         <Filter />
         <Items />
       </div>

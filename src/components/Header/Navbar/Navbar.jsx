@@ -7,31 +7,56 @@ const Navbar = ({items, userSpecs}) => {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="row justify-content-between w-100 align-items-center">
-          <div className="navbar__left d-flex align-items-center justify-content-between">
+        <div className="row w-100 position-relative">
+
+          {/* Mobile */}
+          <div className="navbar__mobile mx-auto">
+
+            {/* Hamburger */}
+            <div className="navbar__hamburger-menu">
+              <span className="navbar__hamburger-menu-line"></span>
+              <span className="navbar__hamburger-menu-line"></span>
+              <span className="navbar__hamburger-menu-line"></span>
+            </div>
+
             <Link to="/" className="navbar__brand">
-              <img src={Logo} alt="Karvi" className="img-fluid" />
+              <img src={Logo} alt="Karvi" className="img-fluid navbar__brand-img" />
             </Link>
 
-            <ul className="navbar__items-container d-flex align-items-end">
-              {items.map((item) => (
-                <li className="navbar__items" key={item}>{item}</li>
-              ))}
-            </ul>
           </div>
 
-          <div className="navbar__user-container">
-            <ul className="d-flex align-items-center">
-              {userSpecs.map((user) => (
-                <li className="navbar__user-data" key={user.name}>
-                  <Link to="/" className="d-flex align-items-center">
-                    <img src={user.icon} alt={user.name} className="navbar__user-data-img" />
-                    {user.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Desktop */}
+          <div className="navbar__desktop justify-content-between w-100 align-items-center">
+
+            {/* Left */}
+            <div className="navbar__left d-flex align-items-center justify-content-between">
+              <Link to="/" className="navbar__brand">
+                <img src={Logo} alt="Karvi" className="img-fluid" />
+              </Link>
+
+              <ul className="navbar__items-container d-flex align-items-end">
+                {items.map((item) => (
+                  <li className="navbar__items" key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right */}
+            <div className="navbar__user-container">
+              <ul className="d-flex align-items-center">
+                {userSpecs.map((user) => (
+                  <li className="navbar__user-data" key={user.name}>
+                    <Link to="/" className="d-flex align-items-center">
+                      <img src={user.icon} alt={user.name} className="navbar__user-data-img" />
+                      {user.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
+
         </div>
       </div>
     </nav>

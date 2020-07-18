@@ -1,34 +1,95 @@
 .navbar {
   padding: 18px 0 26px;
 
-  .navbar__left {
-    width: 50%;
+  // Mobile
+  @include respond-below(sm) {
+    padding: 12px 0;
+  }
 
-    .navbar__items-container {
-      margin-bottom: initial;
+  // Mobile
+  .navbar__mobile {
+    display: none;
 
-      .navbar__items {
-        font-weight: $bold;
-        padding-right: 42px;
+    // Ipad
+    @include respond-below(sm) {
+      display: block;
+    }
+
+    // Hamburger
+    .navbar__hamburger-menu {
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 18px;
+
+      // Mobile
+      @include respond-below(sm) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .navbar__hamburger-menu-line {
+        background-color: #303B4B;
+        border-radius: 3px;
+        display: block;
+        height: 1px;
+        margin-bottom: 7px;
+        width: 100%;
+
+        &:last-child {
+          margin-bottom: initial;
+          width: 10px;
+        }
+      }
+    }
+
+    .navbar__brand {
+      .navbar__brand-img {
+        height: 24.5px;
       }
     }
   }
 
-  .navbar__user-container {
-    .navbar__user-data {
-      padding-right: 38.6px;
+  // Desktop
+  .navbar__desktop {
+    display: flex;
 
-      &:last-child {
-        padding-right: initial;
+    // Ipad
+    @include respond-below(sm) {
+      display: none;
+    }
+
+    // Left
+    .navbar__left {
+      width: 50%;
+
+      .navbar__items-container {
+        margin-bottom: initial;
+
+        .navbar__items {
+          font-weight: $bold;
+          padding-right: 42px;
+        }
       }
+    }
 
-      a {
-        .navbar__user-data-img {
-          padding-right: 8px;
+    // Right - User
+    .navbar__user-container {
+      .navbar__user-data {
+        padding-right: 38.6px;
+
+        &:last-child {
+          padding-right: initial;
         }
 
-        color: $dark-grey;
-        font-size: 16px;
+        a {
+          .navbar__user-data-img {
+            padding-right: 8px;
+          }
+
+          color: $dark-grey;
+          font-size: 16px;
+        }
       }
     }
   }

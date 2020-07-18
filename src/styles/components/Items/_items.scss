@@ -1,4 +1,10 @@
 .items {
   margin-top: 24px;
   width: calc(100% - 325px);
+
+  // Ipad
+  @include respond-below(sm) {
+    margin-top: initial;
+    width: 100%;
+  }
 }

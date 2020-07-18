@@ -12,7 +12,9 @@ const ItemSingle = () => {
         <img src={Heart} alt="Heart" className="items__item-heart" />
       </button>
 
-      <img src={Chevrolet} alt="Chevrolet" className="items__item-img img-fluid" />
+      <div style={{
+        backgroundImage: `url( ${Chevrolet} )`,
+      }} alt="Chevrolet" className="items__item-img w-100"></div>
 
       <div className="items__item-content">
 

@@ -6,6 +6,12 @@
   margin-bottom: 13px;
   margin-right: $item-separation;
   position: relative;
+  width: 310px;
+
+  // Ipad
+  @include respond-below(sm) {
+    width: 350px;
+  }
 
   // Third childs
   &:nth-child(3n) {
@@ -39,6 +45,13 @@
     .items__item-heart {
       width: 16.19px;
     }
+  }
+
+  // Image
+  .items__item-img {
+    background-position: center center;
+    background-size: cover;
+    height: 182px;
   }
 
   // Content

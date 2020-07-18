@@ -1,3 +1,12 @@
 .used-cars {
   margin-bottom: 19px;
+
+  .used-cars__content {
+    display: flex;
+
+    // Ipad
+    @include respond-below(sm) {
+      display: block;
+    }
+  }
 }

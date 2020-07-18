@@ -4,9 +4,16 @@
   padding-bottom: 24px;
   padding-top: 11px;
   position: fixed;
-  top: 83.75px;
+  top: 83.7px;
   width: 100%;
   z-index: 2;
+
+  // Ipad
+  @include respond-below(sm) {
+    padding-bottom: 18px;
+    padding-top: 9px;
+    top: 52.3px;
+  }
 
   .breadcrumbs {
     margin-bottom: 22px;

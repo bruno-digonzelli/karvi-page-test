@@ -2,27 +2,102 @@
   margin-right: 43px;
   width: 282px;
 
-  // Total
-  .filter__results-total-container {
-    border-bottom: 1px solid rgba($black, 0.11);
-    margin-bottom: 10px;
+  // Ipad
+  @include respond-below(sm) {
+    margin-bottom: 16px;
+    margin-right: initial;
+    width: 100%;
+  }
 
-    .filter__results-total {
-      color: $dark-grey;
-      padding-bottom: 5px;
+  // Ipad general - Above products
+  .filter__results-ipad-general {
+    display: none;
+
+    // Ipad
+    @include respond-below(sm) {
+      display: flex;
+    }
+
+    .filter__results-ipad-general-filters {
+      .filter__results-ipad-general-filters-name {
+        margin-right: 9px;
+      }
     }
   }
 
-  // Results
-  .filter__results-container {
-    .filter__results-item {
-      margin-bottom: 10px;
+  .filter__container {
+    // Ipad
+    @include respond-below(sm) {
+      background-color: $grey;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      visibility: hidden;
+      width: 100%;
+      z-index: 4;
+    }
 
-      .filter__results-geo-container {
-        .filter__results-geo {
-          .filter__results-geo-text {
-            line-height: 1;
-            margin-right: 6px;
+    // Top - Ipad
+    .filter__top-ipad-fixed {
+      display: none;
+      padding: 11px 22px 0;
+
+      // Ipad
+      @include respond-below(sm) {
+        display: flex;
+      }
+
+      .filter__top-cross-container {
+        width: 16px;
+
+        .filter__top-cross {
+          background-color: $primary-color;
+          height: 1.5px;
+          transform: rotate(45deg);
+          transform-origin: center center;
+          width: 100%;
+
+          // Last child
+          &:last-child {
+            transform: rotate(-45deg) translate(0.75px, -1.75px);
+          }
+        }
+      }
+    }
+
+    .filter__content {
+      // Ipad
+      @include respond-below(sm) {
+        margin: 0 auto;
+        width: 282px;
+      }
+
+      // Total
+      .filter__results-total-container {
+        border-bottom: 1px solid rgba($black, 0.11);
+        margin-bottom: 10px;
+
+        .filter__results-total {
+          color: $dark-grey;
+          padding-bottom: 5px;
+        }
+      }
+
+      // Results
+      .filter__results-container {
+        .filter__results-item {
+          margin-bottom: 22px;
+
+          .filter__results-geo-container {
+            .filter__results-geo {
+              .filter__results-geo-text {
+                color: inherit;
+                line-height: 1;
+                margin-right: 6px;
+              }
+            }
           }
         }
       }
