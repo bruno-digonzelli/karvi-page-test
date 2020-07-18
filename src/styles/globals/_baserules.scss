@@ -1,0 +1,306 @@
+/* --------- CUSTOM RESET ---------- */
+/* -------------------------------
+		0.-CSS RESET
+-------------------------------- */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+main {
+  background-color: $grey;
+  height: 100%;
+  margin: 0 auto;
+  padding: 221px 0;
+
+  // Ipad
+  @include respond-below(sm) {
+    padding: 168px 0;
+  }
+}
+
+strong {
+  font-weight: bolder;
+}
+/* --------- END CUSTOM RESET ---------- */
+
+/* --------- END TYPOGRAPHY ---------- */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+a,
+li,
+label,
+p,
+input,
+textarea,
+button,
+select {
+  color: $black;
+  font-family: $primary-font;
+  margin-bottom: initial;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h5,
+.h5 {
+  font-weight: $bold;
+}
+
+h1,
+.h1 {
+  font-size: 26px;
+  line-height: 30px;
+
+  // Ipad
+  @include respond-below(sm) {
+    font-size: 22px;
+  }
+
+  // Mobile
+  @include respond-below(xs) {
+    font-size: 16px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+h3,
+.h3 {
+  font-size: 18px;
+  line-height: 1;
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+  font-weight: $light;
+  line-height: 1;
+}
+
+h5,
+.h5 {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+h6,
+.h6 {
+  color: $dark-grey;
+  font-size: 14px;
+  font-weight: $light;
+  line-height: 19px;
+}
+
+p,
+.p {
+  color: #6B6D71;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+a {
+  color: $black;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+button {
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+
+	// Hover
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+		-moz-outline-style: none;
+	}
+}
+
+span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+hr {
+  border-top: 1px solid $primary-color;
+}
+/* --------- END TYPOGRAPHY ---------- */
+
+/* --------- CUSTOM MODIFICATIONS ---------- */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.container {
+  max-width: initial;
+  padding-left: $padding-container-desktop;
+  padding-right: $padding-container-desktop;
+
+  // Desktop
+  @include respond-above(lg) {
+    max-width: calc(1279px + #{$padding-container-desktop * 2});
+  }
+
+  // Ipad pro
+  @include respond-below(md) {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+
+  // Mobile
+  @include respond-below(xs) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+/* --------- CUSTOM MODIFICATIONS ---------- */

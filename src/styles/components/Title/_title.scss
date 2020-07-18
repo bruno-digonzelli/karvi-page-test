@@ -1,0 +1,54 @@
+.title {
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(#000, 0.16);
+  padding-bottom: 24px;
+  padding-top: 11px;
+  position: fixed;
+  top: 83.7px;
+  width: 100%;
+  z-index: 2;
+
+  // Ipad
+  @include respond-below(special) {
+    padding-bottom: 18px;
+    padding-top: 9px;
+    top: 52.3px;
+  }
+
+  // Mobile
+  @include respond-below(xs) {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 22px;
+    padding-left: initial;
+
+    // Mobile
+    @include respond-below(xs) {
+      margin-bottom: 16px;
+    }
+
+    .breadcrumbs__item {
+      font-size: 14px;
+      font-weight: $light;
+      line-height: 19px;
+      text-decoration: underline;
+
+      &--state-active {
+        font-weight: $regular;
+        text-decoration: initial;
+      }
+
+      & > button {
+        font-weight: inherit;
+        text-decoration: inherit;
+      }
+    }
+
+    .breadcrumbs__line {
+      margin: 0 2px;
+    }
+  }
+}

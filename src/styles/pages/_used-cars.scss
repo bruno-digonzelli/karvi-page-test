@@ -1,0 +1,10 @@
+.used-cars {
+  .used-cars__content {
+    display: flex;
+
+    // Ipad
+    @include respond-below(sm) {
+      display: block;
+    }
+  }
+}

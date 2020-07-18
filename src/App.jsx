@@ -1,12 +1,19 @@
-import React from "react"
-import "./styles/main.scss"
+import React from 'react';
+import Header from './components/Header/Header';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import UsedCars from './pages/UsedCars';
 
 const App = () => {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
-  )
-}
+    <Router>
+      <Header city="Sao Paulo" />
 
-export default App
+      <Switch>
+        <Route exact path="/" component={UsedCars} />
+      </Switch>
+
+    </Router>
+  );
+};
+
+export default App;
