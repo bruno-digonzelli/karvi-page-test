@@ -10,15 +10,19 @@ import Loader from '../components/Loader/Loader';
 const UsedCars = () => {
   const dispatch = useDispatch();
 
+  // Hooks
   useEffect(() => {
+    // Dispatch
     dispatch(getProductsActions());
   }, []);
 
+  // Selectors
   const {loading, error} = useSelector((state) => state.products);
 
   return (
     <main className="used-cars">
 
+      {/* If API call is catched */}
       {error ? (
         <Error>
           <h1>Hubo un error en la conexion con la API. Solicite mas tarde :(</h1>
@@ -26,6 +30,7 @@ const UsedCars = () => {
       ) : (
         <>
 
+          {/* Wait for api call. If successfull, show content. Optional timeout added on actions call just for show loader purpose only. */}
           {
             loading ? (
               <Loader />

@@ -12,6 +12,7 @@ export function getProductsActions() {
     try {
       const response = await axiosClient.get('/products');
 
+      // Optional timeout just to show loader
       setTimeout(() => {
         dispatch( getProductsSuccess( response.data ) );
       }, 2000);
