@@ -1,31 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Chevrolet from '../../../public/images/chevrolet.jpg';
 import Status from '../../../public/images/status-down.svg';
 import Heart from '../../../public/images/heart.svg';
 
-import Trust from '../../../public/images/trust.svg';
-import Settings from '../../../public/images/settings.svg';
 import Award from '../../../public/images/award.svg';
-import Carblue from '../../../public/images/car-blue.svg';
 
-
-const characteristics = [
-  {
-    icon: Carblue,
-    copy: 'Mais carros para escolher',
-  },
-  {
-    icon: Settings,
-    copy: 'Conheça o status do carro real',
-  },
-  {
-    icon: Trust,
-    copy: 'Tome uma decisão de compra sem preocupações',
-  },
-];
-
-const ItemSingle = () => {
+const ItemSingle = ({characteristics}) => {
   return (
     <Link to="/" className="items__item">
 
@@ -104,6 +86,13 @@ const ItemSingle = () => {
 
     </Link>
   );
+};
+
+ItemSingle.propTypes = {
+  characteristics: PropTypes.arrayOf(PropTypes.shape({
+    icon: PropTypes.string.isRequired,
+    copy: PropTypes.string.isRequired,
+  })),
 };
 
 export default ItemSingle;

@@ -6,7 +6,7 @@ import {getProductsActions} from '../actions/products/getProductsActions';
 import Error from '../components/Error/Error';
 import Loader from '../components/Loader/Loader';
 import FilterContainer from '../components/Filter/FilterContainer';
-import CONSTANTS from '../constants';
+import CONSTANTS from '../core/constants';
 
 const UsedCars = () => {
   const dispatch = useDispatch();
