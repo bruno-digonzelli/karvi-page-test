@@ -23,6 +23,7 @@ export default function( state = initialState, action) {
       ...state,
       products: action.payload.items,
       filters: action.payload.availableFilters,
+      loading: initialState.loading,
     };
   case GET_PRODUCTS_ERROR:
     return {
