@@ -37,5 +37,9 @@ module.exports = merge(common, {
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
+    new Dotenv({
+      path: './.env.production',
+      safe: true,
+    }),
   ],
 });
