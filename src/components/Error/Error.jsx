@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Logo from '../../../public/images/logo.svg';
 
 const Error = ({children}) => (
-  <div className="d-flex justify-content-center align-items-center flex-column">
+  <div className="d-flex justify-content-center align-items-center flex-column mt-5 p-5">
     <img src={Logo} alt="Kravi" className="mb-5" />
     {children}
   </div>

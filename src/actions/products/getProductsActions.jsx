@@ -11,7 +11,10 @@ export function getProductsActions() {
 
     try {
       const response = await axiosClient.get('/products');
-      dispatch( getProductsSuccess( response.data ) );
+
+      setTimeout(() => {
+        dispatch( getProductsSuccess( response.data ) );
+      }, 2000);
     } catch (error) {
       dispatch( getProductsError(true) );
     }

@@ -5,6 +5,7 @@ import Filter from '../components/Filter/Filter';
 import Items from '../components/Items/Items';
 import {getProductsActions} from '../actions/products/getProductsActions';
 import Error from '../components/Error/Error';
+import Loader from '../components/Loader/Loader';
 
 const UsedCars = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const UsedCars = () => {
 
           {
             loading ? (
-              <p>cargando...</p>
+              <Loader />
             ) : (
               <>
                 <Title
