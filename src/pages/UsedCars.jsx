@@ -7,6 +7,7 @@ import Error from '../components/Error/Error';
 import Loader from '../components/Loader/Loader';
 import FilterContainer from '../components/Filter/FilterContainer';
 import CONSTANTS from '../core/constants';
+import {getFilterSelector, getItemsSelector} from '../selectors/products';
 
 const UsedCars = () => {
   const dispatch = useDispatch();
@@ -18,9 +19,13 @@ const UsedCars = () => {
   }, []);
 
   // Selectors
-  const {loading, error} = useSelector((state) => state.products);
+  const {loading, error, total, filters, items} = useSelector((state) => state.products);
 
-  const city = CONSTANTS.city;
+  const filtersSelector = filters ? getFilterSelector(filters) : null;
+  const getItems = items ? getItemsSelector(items) : null;
+
+  // Constants
+  const {city} = CONSTANTS;
 
   return (
     <main className="used-cars">
@@ -35,9 +40,7 @@ const UsedCars = () => {
 
           {/* Wait for api call. If successfull, show content. Optional timeout added on actions call just for show loader purpose only. */}
           {
-            loading ? (
-              <Loader />
-            ) : (
+            !loading && filtersSelector && getItems ? (
               <>
                 <Title
                   city={city}
@@ -46,10 +49,16 @@ const UsedCars = () => {
                 <div className="used-cars__content container">
                   <FilterContainer
                     city={city}
+                    filters={filtersSelector}
+                    total={total}
                   />
-                  <Items />
+                  <Items
+                    items={getItems}
+                  />
                 </div>
               </>
+            ) : (
+              <Loader />
             )
           }
 

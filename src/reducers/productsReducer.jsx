@@ -5,8 +5,8 @@ import {
 } from '../types';
 
 const initialState = {
-  products: [],
-  filters: [],
+  items: null,
+  filters: null,
   loading: false,
   error: null,
   total: 0,
@@ -22,7 +22,7 @@ export default function( state = initialState, action) {
   case GET_PRODUCTS_SUCCESS:
     return {
       ...state,
-      products: action.payload.items,
+      items: action.payload.items,
       filters: action.payload.availableFilters,
       loading: initialState.loading,
       total: action.payload.totalCount,
