@@ -23,3 +23,4 @@ After you clone the project, to set up the project smoothly you need to follow t
 ## Extra
 - Added recommended extensions for develop
 - To run a server for the API, run `npm run db` when located of the root path of the repository. By default it will use por `4000`, check that your desired `.env` file has the same port added.
+- Timeout was added to show loader at begin for UI styles only, it is not necesary. 
